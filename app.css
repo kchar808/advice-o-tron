@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Nixie+One|Press+Start+2P&display=swap');
+
+/* Minimal resets used from https://alligator.io/css/minimal-css-reset/ */
+
+/* font-family: 'Press Start 2P', cursive; 
+
+font-family: 'Nixie One', cursive;
+*/
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* App Rules */
+
+:root {
+  --default-padding: 1.5em;
+  --primary-color: #122661;
+  --secondary-color: #3C508B;
+  --tertirary-color: #071747;
+  --main-text-color: #FFFFFF;
+}
+
+.main-head, .content, .side, .main-footer, p {
+  padding: var(--default-padding);
+}
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+  font-family: 'Nixie One', cursive;
+  background: var(--secondary-color);
+  color: var(--main-text-color);
+}
+
+
+.main-head {
+  grid-area: header;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  background-color: var(--primary-color);
+}
+
+.content {
+  grid-area: content;
+  text-align: center;
+}
+
+.side {
+  grid-area: sidebar;
+  background-color: var(--primary-color);
+}
+
+.main-footer {
+  grid-area: footer;
+  font-size: 0.75em;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "content"
+    "sidebar"
+    "footer";
+  grid-template-rows: auto auto 1fr auto;
+  height: 100%;
+}
+
+h1 {
+  font-variant: small-caps;
+  padding: 0.50em;
+}
+
+h2 {
+  font-weight: bold;
+  padding: 0.75em 0;
+}
+
+p {
+
+}

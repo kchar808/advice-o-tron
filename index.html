@@ -3,37 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="app.css">
   <title>Advice-O-Tron</title>
 </head>
 <body>
-  <header class="main-head">
-    <h1>Advice-O-Tron</h1>
-  </header>
+  <div class="wrapper">
+    <header class="main-head">
+      <h1>Advice-O-Tron</h1>
+    </header>
 
-  <article class="content">
-    <h2>Here's some advice...</h2>
-    <p id="advice"></p>
-    <a href="#" id="tweet-button" target="_blank"><button>Tweet</button></a>
-  </article>
+    <article class="content">
+      <h2>Here's some advice...</h2>
+      <p id="advice"></p>
+      <a href="#" id="tweet-button" target="_blank"><button>Tweet</button></a>
+    </article>
 
-  <aside class="side">
-    <h2>Why use Advice-O-Tron?</h2>
-    <section>
-      <h3>Reason #1</h3>
-      <p>Everyone can use advice.</p>
-    </section>
-    <section>
-      <h3>Reason #2</h3>
-      <p>Advice is good.</p>
-    </section>
-    <section>
-      <h3>Reason #3</h3>
-      <p>It helps you.</p>
-    </section>
-  </aside>
-  <footer class="main-footer">
-    <p>A freeCodeCampChicago Local study group jam.</p>
-  </footer>
+    <aside class="side">
+      <h2>Why use Advice-O-Tron?</h2>
+      <section>
+        <h3>Reason #1</h3>
+        <p>Everyone can use advice.</p>
+      </section>
+      <section>
+        <h3>Reason #2</h3>
+        <p>Advice is good.</p>
+      </section>
+      <section>
+        <h3>Reason #3</h3>
+        <p>It helps you.</p>
+      </section>
+    </aside>
+    <footer class="main-footer">
+      <p>A freeCodeCampChicago Local study group jam.</p>
+    </footer>
+  </div>
 
   <script>
     "use strict";
@@ -55,8 +58,6 @@
         console.log('API JSON data: ', data);
         console.log(adviceText);
       });
-
-      console.log('Hello!');
   </script>
 </body>
 </html>
