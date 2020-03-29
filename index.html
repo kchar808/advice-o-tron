@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advice-o-tron</title>
+</head>
+<body>
+  <p id="advice"></p>
+  <a href="#" id="tweet-button" target="_blank"><button>Tweet</button></a>
+
+  <script>
+    "use strict";
+
+    fetch('https://api.adviceslip.com/advice')
+      .then((response) => {
+        console.log('Response: ', response);
+        return response.json();
+      })
+      .then((data) => {
+        const tweetURL = 'https://twitter.com/intent/tweet?text=';
+        const adviceText = data.slip.advice;
+        const adviceElement = document.getElementById('advice');
+        const tweetButton = document.getElementById('tweet-button');
+        
+        adviceElement.innerText = adviceText;
+        tweetButton.attributes.href.value = tweetURL + encodeURIComponent(adviceText);
+
+        console.log('API JSON data: ', data);
+        console.log(adviceText);
+      });
+
+      console.log('Hello!');
+  </script>
+</body>
+</html>
