@@ -19,6 +19,7 @@
       </div>
       
       <a href="#" id="tweet-button" target="_blank"><button class="tweet-button">Tweet</button></a>
+      <button class="tweet-button" id="new-advice">More advice</button>
     </article>
 
     <aside class="side">
@@ -44,23 +45,26 @@
   <script>
     "use strict";
 
-    fetch('https://api.adviceslip.com/advice')
-      .then((response) => {
-        console.log('Response: ', response);
-        return response.json();
-      })
-      .then((data) => {
-        const tweetURL = 'https://twitter.com/intent/tweet?text=';
-        const adviceText = data.slip.advice;
-        const adviceElement = document.getElementById('advice');
-        const tweetButton = document.getElementById('tweet-button');
-        
-        adviceElement.innerText = adviceText;
-        tweetButton.attributes.href.value = tweetURL + encodeURIComponent(adviceText);
+    function getAdvice() {
+      fetch('https://api.adviceslip.com/advice')
+        .then((response) => {
+          console.log('Response: ', response);
+          return response.json();
+        })
+        .then((data) => {
+          const tweetURL = 'https://twitter.com/intent/tweet?text=';
+          const adviceText = data.slip.advice;
+          const adviceElement = document.getElementById('advice');
+          let tweetButton = document.getElementById('tweet-button');
+          
+          adviceElement.innerText = adviceText;
+          tweetButton.attributes.href.value = tweetURL + encodeURIComponent(adviceText);
+        });
+    };
 
-        console.log('API JSON data: ', data);
-        console.log(adviceText);
-      });
+    window.onload = getAdvice;
+    const newAdvice = document.getElementById('new-advice');
+    newAdvice.addEventListener('click', getAdvice);
   </script>
 </body>
 </html>
